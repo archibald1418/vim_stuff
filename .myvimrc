@@ -1,10 +1,9 @@
-# 
 syntax on
 
 set number
 set showcmd
 
-# Finishes a paired operator and steps back inside
+" Finishes a paired operator and steps back inside
 inoremap " ""<left>
 inoremap ' ''<left>
 inoremap ( ()<left>
@@ -12,7 +11,7 @@ inoremap [ []<left>
 inoremap { {}<left>
 inoremap <> <><left>
 
-# Install NERDTree :PlugInstall
+" Install NERDTree :PlugInstall
 call plug#begin()
   Plug 'preservim/nerdtree'
 call plug#end()
@@ -24,6 +23,6 @@ nnoremap <C-n> :NERDTree
 nnoremap <C-tab> :NERDTreeToggle
 nnoremap <C-f> :NERDTreeFind
 
-# Lets you exit the hlsearch silently
+" This lets you exit the hlsearch silently
 set hlsearch
 nnoremap <esc><esc> :silent! nohls
