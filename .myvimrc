@@ -26,5 +26,4 @@ nnoremap <C-f> :NERDTreeFind
 
 # Lets you exit the hlsearch silently
 set hlsearch
-nnoremap <esc><esc> :silent! nohls<cr>
-
+nnoremap <esc><esc> :silent! nohls
