@@ -1,9 +1,59 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+call plug#begin()
+" NERDTree plugin
+  Plug 'preservim/nerdtree'
+" plugin on GitHub repo
+  Plug 'tpope/vim-fugitive'
+" let Vundle manage Vundle, required
+  Plug 'VundleVim/Vundle.vim'
+" Git plugin not hosted on GitHub
+  Plug 'git://git.wincent.com/command-t.git'
+" 42 HEADER Plugin
+  Plug 'pbondoer/vim-42header'
+"Inc interactive search
+  "Plug 'haya14busa/incsearch.vim'
+call plug#end()
+
+"+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+"=======================================================
+"+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 syntax on
 
 set number
 set showcmd
 
-" Finishes a paired operator and steps back inside
+set hlsearch
+nnoremap <esc><esc> :silent! nohls<cr>
+
+"Quotes, brackets and such
 inoremap " ""<left>
 inoremap ' ''<left>
 inoremap ( ()<left>
@@ -11,18 +61,14 @@ inoremap [ []<left>
 inoremap { {}<left>
 inoremap <> <><left>
 
-" Install NERDTree :PlugInstall
-call plug#begin()
-  Plug 'preservim/nerdtree'
-call plug#end()
 
-map <F3> :NERDTreeMirror
-map <F3> :NERDTreeToggle
+" NERDTree maps
+map <F3> :NERDTreeMirror<Enter>
+nnoremap <C-q> :NERDTreeToggle<Enter>
 nnoremap <C-z> :NERDTreeFocus
 nnoremap <C-n> :NERDTree
-nnoremap <C-tab> :NERDTreeToggle
 nnoremap <C-f> :NERDTreeFind
+nnoremap <S-]> gt
+nnoremap <S-[> gT
+nnoremap <S-w> <C-w> 
 
-" This lets you exit the hlsearch silently
-set hlsearch
-nnoremap <esc><esc> :silent! nohls
