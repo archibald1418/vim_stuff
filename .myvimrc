@@ -74,9 +74,10 @@ nnoremap <S-w> <C-w>
 
 
 " Move line keymaps 
-" Option-J and Option-K move lines in normal an visual
+" Option-J and Option-K move lines in normal an visual. 
 nnoremap ∆ :m+<CR>==
 nnoremap ˚ :m-2<CR>==
 vnoremap ∆ :m '>+1<CR>gv=gv
 vnoremap ˚ :m '<-2<CR>gv=gv
+" gv reselects visual, == saves indent
 
