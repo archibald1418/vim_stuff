@@ -1,0 +1,2 @@
+require("ubuntu")
+print("Hello")
