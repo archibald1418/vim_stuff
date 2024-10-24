@@ -1,4 +1,4 @@
 set autoindent
-let tab = 2
-set tabstop=&tab
-set shiftwidth=&tab
+set tabstop=2
+set shiftwidth=2
+set noexpandtab
